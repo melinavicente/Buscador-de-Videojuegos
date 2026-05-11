@@ -20,30 +20,6 @@ Catálogo de videojuegos con buscador en tiempo real. Permite buscar juegos, ver
 - Axios
 - CSS personalizado (sin frameworks)
 
-## Estructura del proyecto
-GodGames/
-├── Controllers/
-│   └── VideoGameController.cs   # Endpoints REST
-├── Data/
-│   └── AppDbContext.cs           # Contexto de base de datos
-├── Models/
-│   ├── VideoGames.cs             # Modelo juego
-│   └── Imagen.cs                 # Modelo imagen
-├── Migrations/                   # Migraciones EF Core
-├── appsettings.json              # Configuración y connection string
-└── Program.cs                    # Entry point
-
-frontend/
-├── src/
-│   ├── pages/
-│   │   ├── Home.jsx              # Página principal con buscador
-│   │   ├── GameDetail.jsx        # Detalle del juego
-│   │   └── SearchFilter.jsx      # Componente de búsqueda
-│   ├── services/
-│   │   └── gameServices.js       # Llamadas a la API
-│   ├── main.jsx                  # Entry point React
-│   └── styles.css                # Estilos globales
-
 ## Base de datos
 El modelo utiliza dos tablas: 
 ![ejemploTabla](image-3.png)
@@ -69,8 +45,8 @@ El modelo utiliza dos tablas:
 - UI oscura con tipografía personalizada (Bebas Neue + Barlow)
 
 ## Próximas mejoras
--Panel de administración para agregar, editar y eliminar juegos
--Migración a Supabase (PostgreSQL)
--Integración con la API de RAWG para imágenes automáticas
--Paginación en los resultados
--Filtro por precio y categoría
+- Panel de administración para agregar, editar y eliminar juegos
+- Migración a Supabase (PostgreSQL)
+- Integración con la API de RAWG para imágenes automáticas
+- Paginación en los resultados
+- Filtro por precio y categoría
