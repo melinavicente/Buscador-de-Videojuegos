@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600&display=swap');
+
+:root {
+    --bg: #0f0f0f;
+    --surface: #1a1a1a;
+    --surface2: #242424;
+    --accent: #e8ff00;
+    --accent-dim: #b8cc00;
+    --text: #f0f0f0;
+    --text-muted: #888;
+    --border: #2a2a2a;
+    --radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Barlow', sans-serif;
+    min-height: 100vh;
+}
+
+/* ── HOME ── */
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 6rem;
+    letter-spacing: 4px;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.subtitulo {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 1px;
+}
+
+/* ── SEARCH ── */
+
+.search-container {
+    width: 100%;
+    max-width: 560px;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus {
+    border-color: var(--accent);
+}
+
+.search-input::placeholder {
+    color: var(--text-muted);
+}
+
+.search-results {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    list-style: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.search-result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 1.5rem;
+    cursor: pointer;
+    transition: background 0.15s;
+    border-bottom: 1px solid var(--border);
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background: var(--surface2);
+}
+
+.search-result-item:hover .result-titulo {
+    color: var(--accent);
+}
+
+.result-titulo {
+    font-weight: 500;
+    transition: color 0.15s;
+}
+
+.result-precio {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.no-results {
+    padding: 1rem 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ── GAME DETAIL ── */
+
+.game-detail-container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.back-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.game-detail-container .titulo {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.game-detail-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.game-img-detail {
+    width: 100%;
+    border-radius: var(--radius);
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}
+
+.placeholder {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+}
+
+.info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.game-description {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.game-price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.game-price strong {
+    font-weight: 400;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+@media (max-width: 640px) {
+    .titulo {
+        font-size: 4rem;
+    }
+
+    .game-detail-content {
+        grid-template-columns: 1fr;
+    }
+
+    .game-detail-container .titulo {
+        font-size: 2.5rem;
+    }
+}

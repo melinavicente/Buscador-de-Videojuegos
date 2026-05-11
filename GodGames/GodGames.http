@@ -1,0 +1,7 @@
+@port = 5045
+@hostname = localhost
+
+GET http://{{hostname}}:{{port}}/api/VideoGame/1
+Accept: application/json
+
+###
